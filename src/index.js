@@ -1,9 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom';
+import Node from './containers/Node';
 
 render(
-    <div>
-        Hello World
-    </div>,
+   <Node/>,
     window.root
 )
