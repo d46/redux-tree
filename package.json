@@ -1,0 +1,29 @@
+{
+  "name": "redux-tree",
+  "version": "0.1.0",
+  "description": "Redux treeview challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "react-scripts start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RGFnaGFuIEd1bmF5/redux-tree.git"
+  },
+  "author": "Daghan Gunay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RGFnaGFuIEd1bmF5/redux-tree/issues"
+  },
+  "homepage": "https://github.com/RGFnaGFuIEd1bmF5/redux-tree#readme",
+  "devDependencies": {
+    "react-scripts": "^1.0.10"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.2"
+  }
+}
