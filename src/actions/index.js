@@ -1,7 +1,8 @@
 import {
     ADD_CHILD_NODE,
     RENAME_NODE,
-    CREATE_NODE
+    CREATE_NODE,
+    REMOVE_NODE
 } from '../symbols';
 
 let newNodeId = 0;
@@ -22,3 +23,7 @@ export const renameNode = (nodeId, nodeName) => ({
     nodeName
 });
 
+export const removeNode = (nodeId) => ({
+    type: REMOVE_NODE,
+    nodeId
+})

@@ -20,7 +20,8 @@ export class Node extends Component {
             nodeName,
             childNodes,
             nodeId,
-            createNode
+            createNode,
+            removeNode
         } = this.props;
         return (
             <div className="node-container">
@@ -30,7 +31,7 @@ export class Node extends Component {
                     addChildNode(nodeId, childNodeId)
                 } }> Add Child Node
                 </button>
-                <button> Remove</button>
+                <button onClick={()=> nodeId !== 0 && removeNode(nodeId)}> Remove</button>
                 <div className="child-container">
                     {childNodes.map((childId, index) => (
                         <ConnectedNode key={index} nodeId={childId}/>
