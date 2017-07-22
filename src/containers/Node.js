@@ -1,7 +1,7 @@
 import React from 'react'
 import {Component} from 'react';
 import * as actions from '../actions'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 
 export class Node extends Component {
 
@@ -19,22 +19,23 @@ export class Node extends Component {
             addChildNode,
             nodeName,
             childNodes,
-            nodeId
+            nodeId,
+            createNode
         } = this.props;
         return (
             <div className="node-container">
                 <input type="text" value={nodeName} onChange={this.handleChange}/>
                 <button onClick={ () => {
-                    addChildNode(nodeId)
+                    let childNodeId = createNode().nodeId
+                    addChildNode(nodeId, childNodeId)
                 } }> Add Child Node
                 </button>
-                {nodeName}
-                {childNodes.map((childId,index)=>(
-                    <div key={index}>
-                        {childId}
-                    </div>
-                ))}
                 <button> Remove</button>
+                <div className="child-container">
+                    {childNodes.map((childId, index) => (
+                        <ConnectedNode key={index} nodeId={childId}/>
+                    ))}
+                </div>
             </div>
         )
     }

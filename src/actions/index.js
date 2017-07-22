@@ -1,13 +1,19 @@
 import {
     ADD_CHILD_NODE,
-    RENAME_NODE
+    RENAME_NODE,
+    CREATE_NODE
 } from '../symbols';
 
 let newNodeId = 0;
-export const addChildNode = (nodeId) => ({
+export const createNode = (nodeId) => ({
+    type: CREATE_NODE,
+    nodeId: ++newNodeId
+});
+
+export const addChildNode = (nodeId, childId) => ({
     type: ADD_CHILD_NODE,
     nodeId: nodeId,
-    childId: ++newNodeId
+    childId: childId
 });
 
 export const renameNode = (nodeId, nodeName) => ({
