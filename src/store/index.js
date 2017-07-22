@@ -3,6 +3,7 @@ import reducers from '../reducers';
 
 export default createStore(reducers, {
     0: {
-        nodeName: "First Node"
+        nodeName: "First Node",
+        childNodes: []
     }
 });

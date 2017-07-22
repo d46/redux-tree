@@ -4,16 +4,15 @@ import {
 } from '../symbols';
 
 let newNodeId = 0;
-export const addChildNode = () => ({
+export const addChildNode = (nodeId) => ({
     type: ADD_CHILD_NODE,
-    nodeId: ++newNodeId
+    nodeId: nodeId,
+    childId: ++newNodeId
 });
 
-export const renameNode = (nodeId, nodeName) => {
-    return {
-        type: RENAME_NODE,
-        nodeId,
-        nodeName
-    }
-};
+export const renameNode = (nodeId, nodeName) => ({
+    type: RENAME_NODE,
+    nodeId,
+    nodeName
+});
 

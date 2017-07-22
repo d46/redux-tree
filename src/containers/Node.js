@@ -17,16 +17,23 @@ export class Node extends Component {
     render() {
         let {
             addChildNode,
-            nodeName
+            nodeName,
+            childNodes,
+            nodeId
         } = this.props;
         return (
             <div className="node-container">
                 <input type="text" value={nodeName} onChange={this.handleChange}/>
                 <button onClick={ () => {
-                    addChildNode()
+                    addChildNode(nodeId)
                 } }> Add Child Node
                 </button>
                 {nodeName}
+                {childNodes.map((childId,index)=>(
+                    <div key={index}>
+                        {childId}
+                    </div>
+                ))}
                 <button> Remove</button>
             </div>
         )
