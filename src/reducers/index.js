@@ -6,8 +6,11 @@ const node = (state, action) => {
     switch (action.type) {
         case ADD_CHILD_NODE:
         case RENAME_NODE:
-            state[action.nodeId].nodeName = action.nodeName;
-            return state;
+            return Object.assign({}, state, {
+                [action.nodeId]: {
+                    nodeName: action.nodeName
+                }
+            });
         default:
             return state;
     }

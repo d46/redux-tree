@@ -1,8 +1,8 @@
 import {createStore} from 'redux'
 import reducers from '../reducers';
 
-export default createStore(reducers,{
-    0:{
-        nodeName:"First Node"
+export default createStore(reducers, {
+    0: {
+        nodeName: "First Node"
     }
 });

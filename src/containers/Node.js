@@ -1,19 +1,18 @@
 import React from 'react'
 import {Component} from 'react';
+import * as actions from '../actions'
+import { connect } from 'react-redux'
 
-class Node extends Component {
-    constructor(props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
-    }
+export class Node extends Component {
 
-    handleChange(e) {
+    handleChange = (e) => {
         let {
             nodeId,
             renameNode
         } = this.props;
         renameNode(nodeId, e.target.value)
     }
+
 
     render() {
         let {
@@ -34,4 +33,9 @@ class Node extends Component {
     }
 }
 
-export default Node;
+function mapStateToProps(state, node) {
+    return state[node.nodeId]
+}
+
+const ConnectedNode = connect(mapStateToProps, actions)(Node)
+export default ConnectedNode

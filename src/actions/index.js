@@ -9,8 +9,11 @@ export const addChildNode = () => ({
     nodeId: ++newNodeId
 });
 
-export const renameNode = (nodeId, nodeName) => ({
-    type: RENAME_NODE,
-    nodeId,
-    nodeName
-});
+export const renameNode = (nodeId, nodeName) => {
+    return {
+        type: RENAME_NODE,
+        nodeId,
+        nodeName
+    }
+};
+
