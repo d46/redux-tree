@@ -12,3 +12,5 @@ ReactDOM.render(
     </Provider>,
     window.root
 )
+
+store.dispatch({type: 'GET_TREE_DATA'});

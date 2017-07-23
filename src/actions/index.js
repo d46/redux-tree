@@ -4,11 +4,11 @@ import {
     CREATE_NODE,
     REMOVE_NODE
 } from '../symbols';
+import {nodeId} from '../utils/NodeId'
 
-let newNodeId = 0;
-export const createNode = (nodeId) => ({
+export const createNode = () => ({
     type: CREATE_NODE,
-    nodeId: ++newNodeId
+    nodeId: nodeId.next()
 });
 
 export const addChildNode = (nodeId, childId) => ({

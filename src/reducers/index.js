@@ -2,10 +2,11 @@ import {
     ADD_CHILD_NODE,
     RENAME_NODE,
     CREATE_NODE,
-    REMOVE_NODE
+    REMOVE_NODE,
+    GET_NODE_DATA_RECEIVED,
 } from '../symbols';
+import {nodeId} from '../utils/NodeId'
 const node = (state, action) => {
-
     switch (action.type) {
         case CREATE_NODE:
             return Object.assign({}, state, {
@@ -27,7 +28,7 @@ const node = (state, action) => {
         case RENAME_NODE:
             return Object.assign({}, state, {
                 [action.nodeId]: Object.assign({}, state[action.nodeId], {
-                    nodeName: action.nodeName
+                    nodeName: action.nodeNCREATE_NODEame
                 })
             });
         case REMOVE_NODE:
@@ -61,6 +62,9 @@ const node = (state, action) => {
             // Remove all childs from state
             nodesWillRemove.forEach(nodeId => delete newState[nodeId]);
             return newState;
+        case GET_NODE_DATA_RECEIVED:
+            nodeId.set(Object.keys(action.data).length);
+            return action.data;
         default:
             return state;
     }
