@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 
 export class Node extends Component {
 
-    handleChange = (e) => {
+    handleChange(e) {
         let {
             nodeId,
             renameNode
@@ -25,7 +25,7 @@ export class Node extends Component {
         } = this.props;
         return (
             <div className="node-container">
-                <input type="text" value={nodeName} onChange={this.handleChange}/>
+                <input type="text" value={nodeName} onChange={this.handleChange.bind(this)}/>
                 <button onClick={ () => {
                     let childNodeId = createNode().nodeId
                     addChildNode(nodeId, childNodeId)
