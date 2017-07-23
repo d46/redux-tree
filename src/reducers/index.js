@@ -28,7 +28,7 @@ const node = (state, action) => {
         case RENAME_NODE:
             return Object.assign({}, state, {
                 [action.nodeId]: Object.assign({}, state[action.nodeId], {
-                    nodeName: action.nodeNCREATE_NODEame
+                    nodeName: action.nodeName
                 })
             });
         case REMOVE_NODE:
